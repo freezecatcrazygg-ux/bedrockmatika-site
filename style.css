@@ -793,3 +793,13 @@ html[data-mascot-motion=on] .section-walkway[data-visible=true] .section-walker,
 @keyframes section-turn{0%{transform:scaleX(1)}50%{transform:scaleX(-1)}}
 @media(max-width:600px){.export-frame{margin-top:68px}.build-catalog{margin-top:72px}.section-walkway{--sprite-height:48px;top:-48px;left:12px;right:12px}.export-traveller{--sprite-width:42px;right:auto;width:44%}.catalog-traveller{--sprite-width:28px}}
 .catalog-traveller{top:-65px}@media(max-width:600px){.catalog-traveller{top:-49px}}
+
+/* Workshop heading: title on the left, the primary actions on the right. */
+.hero{grid-template-columns:minmax(0,1fr) minmax(240px,300px);gap:32px;align-items:center}
+.hero-actions{justify-self:end;align-items:stretch;flex-direction:column;gap:10px;width:100%}
+.hero-actions .btn{width:100%;justify-content:center;text-align:center}
+@media(max-width:760px){
+ .hero{grid-template-columns:minmax(0,1fr);gap:18px}
+ .hero-actions{justify-self:stretch;flex-direction:row;justify-content:flex-end;flex-wrap:wrap}
+ .hero-actions .btn{width:auto;flex:1 1 180px}
+}
