@@ -796,7 +796,7 @@ html[data-mascot-motion=on] .section-walkway[data-visible=true] .section-walker,
 
 /* Workshop heading: title on the left, the primary actions on the right. */
 .hero{grid-template-columns:minmax(0,1fr) minmax(240px,300px);gap:32px;align-items:center}
-.hero-actions{justify-self:end;align-items:stretch;flex-direction:column;gap:10px;width:100%}
+.hero-actions{justify-self:end;align-self:start;align-items:stretch;flex-direction:column;gap:10px;width:100%}
 .hero-actions .btn{width:100%;justify-content:center;text-align:center}
 @media(max-width:760px){
  .hero{grid-template-columns:minmax(0,1fr);gap:18px}
