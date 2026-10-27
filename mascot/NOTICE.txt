@@ -1,0 +1,5 @@
+Character artwork supplied by the project owner in my-chibi-full-pack.zip. Rendered with Nogard Minecraft Chibi Skin Maker. Original character assets retain their respective rights and are not relicensed under the source-code MIT license. Selected APNGs have frame-disposal flags normalized for correct compositing; artwork pixels are unchanged. First-frame PNGs provide reduced-motion fallbacks.
+
+walk.png and walk-still.png: supplied walk.gif (25 October 2026), original 4 frames and timing retained; transparent outer margin cropped consistently across frames.
+
+blockwalk.png, sneakwalk.png and skip.png (26 October 2026): decoded from the corresponding supplied GIFs in my-chibi-full-pack.zip. All original frames and durations retained, with one shared transparent-margin crop per sequence. APNG frames verified pixel-for-pixel against the decoded GIFs; matching first-frame PNGs support reduced motion.

@@ -1,0 +1,65 @@
+Third-party resources
+
+Minecraft PNG textures: Mojang/bedrock-samples. See https://github.com/Mojang/bedrock-samples
+Not covered by the Bedrockmatika source MIT license. (c) Mojang AB. All rights reserved. Subject to https://www.minecraft.net/en-us/eula .
+
+
+Block Library: three original layout plans (cabin, pavilion, bridge), CC0-1.0.
+Author: Block Library. Source: https://blocklibrary.net/guides/original-builds.html
+License: https://creativecommons.org/publicdomain/zero/1.0/
+Converted from the public guide placement plans to Sponge schematics; previews generated from the same placements.
+
+
+Character artwork supplied by the project owner in my-chibi-full-pack.zip. Rendered with Nogard Minecraft Chibi Skin Maker. Original character assets retain their respective rights and are not relicensed under the source-code MIT license. Selected APNGs have frame-disposal flags normalized for correct compositing; artwork pixels are unchanged. First-frame PNGs provide reduced-motion fallbacks.
+
+walk.png and walk-still.png: supplied walk.gif (25 October 2026), original 4 frames and timing retained; transparent outer margin cropped consistently across frames.
+
+blockwalk.png, sneakwalk.png and skip.png (26 October 2026): decoded from the corresponding supplied GIFs in my-chibi-full-pack.zip. All original frames and durations retained, with one shared transparent-margin crop per sequence. APNG frames verified pixel-for-pixel against the decoded GIFs; matching first-frame PNGs support reduced motion.
+
+
+three
+The MIT License
+
+Copyright © 2010-2025 three.js authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+
+fflate
+MIT License
+
+Copyright (c) 2026 Arjun Barrett
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

@@ -1,0 +1,1 @@
+Bitmap glyphs extracted from official Minecraft Java 1.21.1 client assets: ascii.png, nonlatin_european.png, accented.png. (c) Mojang/Microsoft. Subject to Minecraft EULA. Not covered by Bedrockmatika MIT license.

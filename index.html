@@ -1,0 +1,276 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b1f4d">
+<meta name="description" content="Схемы, голограммы и мапарты для Minecraft Bedrock. Аддон проектора ставится на сервер один раз, каждый игрок подключает свой ресурс-пак. Всё считается в браузере.">
+<title>Бедрокматика — чертежи для Minecraft Bedrock</title>
+<link rel="icon" href="favicon.svg?v=20261025" type="image/svg+xml"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;700&family=JetBrains+Mono:wght@400;600&family=Pixelify+Sans:wght@500;700&family=Russo+One&display=swap">
+<link rel="stylesheet" href="style.css?v=20261024a"></head><body>
+
+<header class="topbar">
+ <a class="brand" href="./"><svg class="brandmark" viewBox="0 0 32 32" aria-hidden="true"><g class="bm-beam"><line x1="16" y1="24" x2="7" y2="15"/><line x1="16" y1="24" x2="25" y2="15"/></g><g class="bm-holo"><polygon points="16,1 25,6 25,15 16,20 7,15 7,6"/><polyline points="7,6 16,11 25,6"/><line x1="16" y1="11" x2="16" y2="20"/></g><polygon class="bm-top" points="16,22 21,25 16,28 11,25"/><polygon class="bm-left" points="11,25 16,28 16,31 11,28"/><polygon class="bm-right" points="16,28 21,25 21,28 16,31"/></svg><span class="brand-name">Бедрокматика</span></a>
+ <nav class="tabs-main" aria-label="Разделы"><button class="nav active" id="workspaceNav">Мастерская</button><button class="nav" id="mapartsNav">Мапарты</button><button class="nav" id="catalogNav">Постройки</button><button class="nav" id="helpNav">Как подключить</button></nav>
+<details class="tools-menu"><summary>Инструменты ↗</summary><div class="tools-cards"><a href="https://mineutils.net/tools/armor-trim-visualizer/" target="_blank" rel="noopener noreferrer"><img class="tool-preview" src="tool-armor.svg" alt="Отделка брони" width="320" height="140" loading="lazy"><strong>Отделка брони · MineUtils ↗</strong><small>Подбери материал и узор отделки на 3D-модели со своим скином.</small></a><a href="https://www.blockpalettes.com/" target="_blank" rel="noopener noreferrer"><img class="tool-preview" src="tool-palette.svg" alt="Палитра блоков" width="320" height="140" loading="lazy"><strong>Палитры блоков ↗</strong><small>Найди красивые сочетания блоков для стен, крыш и дорожек.</small></a><a href="https://www.chunkbase.com/apps/seed-map" target="_blank" rel="noopener noreferrer"><img class="tool-preview" src="tool-seed-map.svg" alt="Карта биомов" width="320" height="140" loading="lazy"><strong>Карта сида · Chunk Base ↗</strong><small>Найди биомы и структуры по сиду. Выбери Bedrock и версию своего мира.</small></a><a href="https://mctools.gg/banner-generator" target="_blank" rel="noopener noreferrer"><img class="tool-preview" src="tool-banner.svg" alt="Узоры знамён" width="320" height="140" loading="lazy"><strong>Мастер знамён · MCTools ↗</strong><small>Собери узор и получи рецепт для ткацкого станка. Команды сайта — для Java.</small></a></div></details> <span class="local-badge" title="Файлы не покидают браузер"><i></i><span>Файлы не покидают браузер</span></span>
+ <a class="maker" title="Проекты SmokeyMedusa835 на CurseForge" href="https://www.curseforge.com/members/smokeymedusa835/projects" target="_blank" rel="noopener noreferrer"><img src="smokey-avatar.png" alt="" width="28" height="28">by <b>SmokeyMedusa835</b></a>
+ <button class="icon-btn" id="aboutBtn" aria-label="Помощь">?</button>
+</header>
+
+<main>
+<div id="workshopSection">
+
+<section class="hero">
+ <div class="hero-text">
+  <span class="sheet-no">ЛИСТ 01 · МАСТЕРСКАЯ</span>
+  <h1>Схема → голограмма<br>в&nbsp;твоём Bedrock-мире</h1>
+  <div class="hero-actions"><button class="btn primary" id="heroExport" type="button">В Minecraft ↓</button><button class="btn ghost" id="heroStructure" type="button" title="Структура Minecraft Bedrock выбранной схемы">Скачать .mcstructure</button><button class="link-btn" id="heroHelp" hidden>Как подключить в игре →</button></div>
+ </div>
+</section>
+
+<div class="workspace">
+ <aside class="panel sources">
+  <div class="panel-title"><span>01</span>Исходники <em id="fileCount">1</em></div>
+  <label class="dropzone" id="structureDrop"><input id="structureInput" type="file" accept=".mcstructure,.litematic,.schem,.schematic,.nbt,.dat,.zip,.mcworld,.glb,.gltf,.obj,.stl" multiple>
+   <span class="drop-icon" aria-hidden="true">＋</span><strong>Перетащи схему, мир или 3D-модель</strong><span>или <u>выбери файл</u></span>
+   <small>Схемы Bedrock и Java, миры, 3D-модели</small></label>
+  <div id="structureList" class="file-list"></div>
+  <p id="mapartHint" class="hint" role="status"></p>
+  <details class="source-more"><summary>Создать схему и другие инструменты</summary>
+  <button type="button" class="shape-entry" id="shapeBtn"><span class="shape-entry-icon" aria-hidden="true">◆</span><span class="shape-entry-text"><strong>Редактор фигур</strong><small>Собери постройку из башен, куполов, арок и стен. Станет схемой для голограммы</small></span></button>
+  <div class="row-actions"><button class="link-btn" id="mapartBtn">Мапарт из картинки</button><button class="link-btn" id="demoBtn">Другое демо</button><button class="link-btn" id="showcaseBtn" title="Все блоки Bedrock с вариантами направлений. В тестовом мире рядом с каждой клеткой встанет настоящий блок и табличка с названием">Витрина блоков</button></div>
+
+  </details>
+  <details class="source-more"><summary>Блоки из других аддонов</summary>
+  <div class="panel-title sub"><span>02</span>Аддоны <small>по желанию</small></div>
+  <label class="dropzone compact" id="addonDrop"><input id="addonInput" type="file" accept=".mcaddon,.mcpack,.zip" multiple><strong>Добавить аддон</strong><small>mcaddon · mcpack · zip, открытые BP + RP</small></label>
+  <p id="addonSupport" class="empty"></p>
+  <div id="addonList" class="file-list"></div>
+  </details>
+
+  <div class="panel-foot"><button class="btn ghost full" id="variantBtn">Заменить материал</button><button class="btn ghost full" id="loadProject">Открыть проект</button><input id="projectInput" type="file" accept=".voxel,.zip" hidden></div>
+ </aside>
+
+ <section class="viewer">
+  <div class="viewer-bar">
+   <div class="viewer-title"><span class="live-dot" aria-hidden="true"></span><strong id="previewTitle">Лесная башня</strong><span class="tag" id="demoTag">ДЕМО</span></div>
+   <div class="seg" role="group" aria-label="Отрисовка"><button id="viewTex" class="selected" title="Текстуры блоков">Блоки</button><button id="viewPlan" title="Синие клетки, как голограмма в игре (B)">Чертёж</button></div>
+   <div class="seg" role="group" aria-label="Вид"><button id="view3d" class="selected">3D</button><button id="viewTop">Сверху</button></div>
+   <button class="icon-btn" id="resetCamera" title="Вернуть камеру" aria-label="Вернуть камеру">⟲</button>
+  </div>
+  <div class="canvas-wrap" id="canvasWrap">
+   <canvas id="preview" aria-label="Трёхмерная схема постройки"></canvas>
+   <span class="corner tl" aria-hidden="true"></span><span class="corner tr" aria-hidden="true"></span><span class="corner bl" aria-hidden="true"></span><span class="corner br" aria-hidden="true"></span>
+   <div class="dim-label"><span>Габариты</span><b id="dimensions">17 × 19 × 17</b></div>
+   <div class="axes" aria-hidden="true"><span class="ax-x">X</span><span class="ax-y">Y</span><span class="ax-z">Z</span></div>
+   <div class="render-note" id="renderNote" hidden></div>
+   <div class="hover-tip" id="hoverTip" hidden></div>
+   <div class="view-help"><span class="view-help-desktop">Наведи на блок · клик — только этот материал · [ ] слои · R поворот · B чертёж · пробел — сборка</span><span class="view-help-touch">Поверни и приблизь постройку жестами. Коснись блока, чтобы показать только его материал.</span></div>
+  </div>
+  <div class="build-credit" id="buildCredit" hidden></div>
+  <div class="viewer-controls">
+   <div class="ctrl ctrl-layer"><label for="layerRange">Слой <b id="layerLabel">Вся постройка</b></label>
+    <div class="range-row"><span>0</span><input id="layerRange" type="range" min="-1" max="18" value="-1"><span id="maxLayer">18</span></div>
+    <select id="layerMode" aria-label="Режим слоёв"><option value="single">Только этот слой</option><option value="below">Всё до этого слоя</option></select></div>
+   <div class="ctrl"><label for="opacity">Видимость <b id="opacityLabel">100%</b></label><input id="opacity" type="range" min="20" max="100" value="100">
+    <label class="check"><input id="outlineEnabled" type="checkbox"><span>Обводка блоков</span></label></div>
+   <div class="ctrl"><label for="nearRadius" title="Настройка ресурс-пака: рисовать только часть схемы рядом с игроком. Модели целиком остаются в памяти. В игре ещё не проверено.">В игре: ближайшая часть</label><select id="nearRadius"><option value="0">Показывать всю схему</option><option value="8">Слабое устройство · 8 блоков</option><option value="16">Слабое устройство · 16 блоков</option><option value="24">Ближайшие 24 блока</option><option value="32">Ближайшие 32 блока</option></select></div><div class="ctrl ctrl-buttons"><button class="btn primary" id="playLayers" aria-pressed="false">▶ Собрать</button><button class="btn ghost" id="rotateBtn">↻ 90°</button><button class="btn ghost" id="mirrorBtn" aria-pressed="false">⇋ Отразить</button><button class="btn ghost" id="cropBtn" aria-pressed="false" title="Отрезать лишнее: гору, землю, соседние постройки">✂ Обрезать</button></div>
+   <div class="ctrl crop-panel" id="cropPanel" hidden><span class="crop-title">Оставить только рамку — тяни «от» и «до». В 3D видно, что останется.</span><div class="frame-row"><b>X</b><input type="range" id="cropX1" aria-label="X: от"><input type="range" id="cropX2" aria-label="X: до"><span id="cropLabelX" class="mono"></span></div><div class="frame-row"><b>Y</b><input type="range" id="cropY1" aria-label="Y: от"><input type="range" id="cropY2" aria-label="Y: до"><span id="cropLabelY" class="mono"></span></div><div class="frame-row"><b>Z</b><input type="range" id="cropZ1" aria-label="Z: от"><input type="range" id="cropZ2" aria-label="Z: до"><span id="cropLabelZ" class="mono"></span></div><div class="crop-actions"><button class="btn primary" id="cropApply">Применить</button><button class="btn ghost" id="cropCancel">Отмена</button><button class="btn ghost" id="cropUndo" hidden>↶ Вернуть как было</button></div></div>
+  </div>
+  <div class="viewer-foot"><span></span><span class="downloads">Скачать <button class="link-btn" id="downloadStructure">.mcstructure</button><button class="link-btn" id="downloadLitematic" title="Для Litematica на Java">.litematic</button><button class="link-btn" id="downloadSchem" title="Для WorldEdit на Java">.schem</button><button class="link-btn" id="saveProject" title="Все схемы ZIP, готовый мир .mcworld, резервная копия .voxel">ещё форматы…</button></span></div>
+ </section>
+
+ <aside class="panel check-panel">
+  <div class="panel-title"><span>03</span>Проверка</div>
+  <div class="panel-walkway" aria-hidden="true"><div class="panel-walker"><img src="mascot/walk-still.png?v=2" data-mascot-animated="mascot/walk.png?v=2" data-mascot-still="mascot/walk-still.png?v=2" alt="" width="44" height="64" decoding="async"></div></div>
+  <div class="stats"><div><span>Блоков</span><strong id="totalBlocks">—</strong></div><div><span>Типов</span><strong id="totalMaterials">—</strong></div></div>
+  <div class="compat" id="compatibility"><span class="status-symbol">✓</span><div><strong id="compatTitle">Схема прочитана</strong><p id="compatDescription">Проверяем модели и текстуры.</p></div></div>
+  <div class="tabs" role="tablist"><button class="tab active" id="materialsTab">Материалы</button><button class="tab" id="reportTab">Замечания <span id="issueCount">0</span></button></div>
+  <input class="search" id="materialSearch" type="search" placeholder="Найти блок…" aria-label="Поиск материала">
+  <div class="spec-head" id="specHead" aria-hidden="true"><span>Поз.</span><span>Наименование</span><span>Кол.</span><span></span></div>
+  <div id="materials" class="materials-list"></div><div id="hiddenTypes" class="hidden-types" hidden></div><div id="report" class="report-list" hidden></div>
+  <div class="seg full" role="group" aria-label="Режим списка"><button id="blocksMode" class="selected">Блоки</button><button id="rawMode">Сырьё</button></div>
+  <p class="hint" id="rawNote" hidden></p>
+  <div class="filter-row"><label for="blockFilter">Показать</label><select id="blockFilter"><option value="all">Все материалы</option></select></div>
+  <button class="btn ghost full" id="downloadMaterials">Список материалов .csv</button>
+ </aside>
+</div>
+
+<div class="export-frame">
+ <div class="section-walkway export-traveller" data-mascot-track aria-hidden="true"><div class="section-walker"><img src="mascot/blockwalk-still.png" data-mascot-animated="mascot/blockwalk.png" data-mascot-still="mascot/blockwalk-still.png" alt="" width="56" height="64" decoding="async"></div></div>
+<section class="export">
+ <div class="export-head"><span class="sheet-no">ЛИСТ 02 · В ИГРУ</span><h2>Забери в Minecraft</h2><p id="exportSummary" class="export-summary" role="status"></p></div>
+
+ <div class="export-body">
+  <h3 class="route-title">Аддон уже есть на сервере — добавь свою схему</h3><p class="route-match">Общий аддон устанавливается один раз. Свои схемы ты подключаешь у себя и загружаешь через проектор — передавать файлы администратору не нужно.</p><ol class="route">
+
+   <li class="stop main"><span class="balloon">1</span><h3>Личный ресурс-пак схемы</h3><p>Схемы из списка слева, до 16 штук. Каждый игрок включает его у себя в глобальных ресурсах выше других паков.</p><p class="stop-note">После включения или смены паков полностью перезапусти Minecraft — иначе меню проектора будет обычным.</p><button class="btn primary" id="packExport">Скачать ресурс-пак</button></li>
+   <li class="stop"><span class="balloon">2</span><h3>Коды в свой проектор</h3><p>Для первого просмотра рядом с проектором коды не нужны. Для подсчёта и голограммы вдали от проектора вставь коды от этого же пака. Большие схемы передаются порциями.</p><a class="btn ghost" href="#codesSection" id="showCodes">Перейти к кодам</a></li>
+  </ol>
+  <p class="route-match">Сверь метку #abcd в названии слота пака и строке «коды» проектора. Метки должны совпадать. Для большой постройки выбери нужную часть шестерёнкой пака, затем указанный для неё слот в проекторе.</p>
+  <details class="server-setup"><summary>Аддона ещё нет? Установка для владельца мира или администратора</summary><div class="server-setup-body"><h3>Общий аддон — один раз</h3><p>Владелец мира или администратор включает BP и базовый RP. Затем каждый игрок добавляет свои схемы самостоятельно.</p><button class="btn ghost" id="baseExport">Скачать общий аддон .mcaddon</button><div class="install-bundle"><div><h3>Первый раз в своём мире?</h3><p>Аддон и текущие схемы — одним файлом. После импорта подключи паки по шагам ниже. Коды для подсчёта вставляются отдельно.</p></div><button class="btn primary" id="bundleExport" type="button">Скачать комплект .mcaddon</button></div></div></details>
+  <div id="packReceipt" class="pack-receipt" role="status" hidden></div>
+ </div>
+ <div class="quick-world"><span aria-hidden="true">▧</span><div><h3>Первый запуск — одним файлом</h3><p>Скачай и открой тестовый мир в Minecraft. Проектор, схемы и подсчёт уже подключены — вставлять коды не нужно. Это отдельный мир.</p><p id="worldHint" role="status"></p></div><button class="btn ghost" id="worldExport">Скачать тестовый мир</button></div>
+ <details class="export-more" id="exportMore"><summary>Дополнительно</summary><div class="export-more-body">
+  <section id="codesSection"><h3>Подсчёт блоков в игре</h3><p>Чтобы проектор считал поставленные блоки, передай ему коды один раз: «Схемы → Загрузить данные выбранной схемы». Коды всех схем пака вставляются за раз, каждая схема встаёт в свой слот и сохраняется в мире — любой твой проектор выберет её из «Загруженных схем». Большие паки копируются порциями — по одной вставке.</p><label class="field">Размер порции<select id="codePortion"><option value="20000">20 000 символов — надёжно</option><option value="50000">50 000 символов — меньше вставок</option><option value="100000">100 000 символов — если игра не виснет</option><option value="100">100 символов — если в игре меню обычное (BM_LIST)</option></select></label><div class="code-nav"><button type="button" class="btn ghost" id="codePrev" aria-label="Предыдущая порция">Назад</button><span id="codeIndex" class="mono" role="status">Порция 1</span><button type="button" class="btn ghost" id="codeNext" aria-label="Следующая порция">Следующая порция</button><button class="btn ghost" id="copyProgress">Скопировать</button></div><p class="hint">Скопируй текущую порцию, вставь в проектор и дождись подтверждения. Затем нажми «Следующая порция». Повторное копирование выдаёт тот же код.</p><p id="codeCopyStatus" class="code-copy-status" role="status" aria-live="polite"></p><textarea id="manualCode" class="manual-code" readonly hidden aria-label="Текущая порция кода" spellcheck="false"></textarea><button class="btn ghost" id="progressExport">Скачать коды</button></section>
+  <section><h3>Табличка материалов</h3><p>Показывает количества материалов и двойных сундуков (54 стака, округление вверх). Для предметов аддонов без известного размера стака принято 64 (*).</p></section>
+ </div></details>
+</section>
+</div>
+
+<section id="catalog" class="build-catalog" aria-labelledby="catalogTitle">
+ <div class="section-walkway catalog-traveller" data-mascot-track aria-hidden="true"><div class="section-walker"><img src="mascot/skip-still.png" data-mascot-animated="mascot/skip.png" data-mascot-still="mascot/skip-still.png" alt="" width="38" height="64" decoding="async"></div></div>
+ <div class="catalog-heading"><div><span class="sheet-no">ЛИСТ 04 · НА СЛЕДУЮЩУЮ СТРОЙКУ</span><h2 id="catalogTitle">Мир построек</h2><p>Лучшие постройки и Bedrock-редстоун с англо- и русскоязычных сайтов. Открывай схемы и строй в Bedrock.</p></div><span class="catalog-total">TOP<br><small>EN · RU подборка</small></span></div>
+ <section id="topCatalog" class="top-catalog" aria-labelledby="topTitle"><h3 id="topTitle" class="visually-hidden">Подборка лучших работ</h3><div id="topTabs" class="top-tabs" role="tablist" aria-label="Разделы подборки"><button id="topTab-build" type="button" role="tab" data-top-tab="build" aria-controls="topPanel"><svg class="top-tab-icon" viewBox="0 0 16 16" aria-hidden="true"><path fill="#c0582f" d="M7 1h2v1h1v1h1v1h1v1h1v1h1v1h1v2H1V7h1V6h1V5h1V4h1V3h1V2h1z"/><path fill="#e8dcc0" d="M3 9h10v6H3z"/><path fill="#7a4a24" d="M7 11h2v4H7z"/><path fill="#65d2e9" d="M4 10h2v2H4zM10 10h2v2h-2z"/></svg><span>Лучшие постройки</span> <small></small></button><button id="topTab-redstone" type="button" role="tab" data-top-tab="redstone" aria-controls="topPanel"><svg class="top-tab-icon" viewBox="0 0 16 16" aria-hidden="true"><path fill="#ff3b30" opacity=".35" d="M3 1h10v9H3z"/><path fill="#8a5a2b" d="M6 8h4v8H6z"/><path fill="#ff3b30" d="M5 3h6v5H5z"/><path fill="#ffb3ab" d="M6 4h2v2H6z"/></svg><span>Редстоун Bedrock</span> <small></small></button><button id="topTab-mapart" type="button" role="tab" data-top-tab="mapart" aria-controls="topPanel"><svg class="top-tab-icon" viewBox="0 0 16 16" aria-hidden="true"><path fill="#d7bc83" d="M1 1h14v14H1z"/><path fill="#5a9b60" d="M3 11l4-5 2 3 2-2 2 5H3z"/><path fill="#f6e18b" d="M10 3h3v3h-3z"/></svg><span>Мапарты</span> <small></small></button></div><div id="topPanel" role="tabpanel">
+ <div class="cat-bar"><label class="catalog-search cat-search"><span aria-hidden="true">⌕</span><input id="topSearch" type="search" maxlength="120" placeholder="Найти: Хогвартс, японский храм, маленький мост…" aria-label="Поиск по подборке"></label><select id="topSort" aria-label="Сортировка"><option value="recommended">Лучшие</option><option value="popular">Популярные у источников</option><option value="downloads">Больше скачиваний</option><option value="views">Больше просмотров</option><option value="newest">Новые</option><option value="small">Сначала маленькие</option><option value="large">Сначала большие</option><option value="random">Вперемешку</option><option value="title">По названию А–Я</option></select><button type="button" id="topShuffle" class="cat-icon" title="Перемешать — другие работы">⟳</button><button type="button" id="topFavorites" class="cat-icon" aria-pressed="false" title="Только избранное">♡</button></div>
+ <div class="cat-facets" id="topFacets" role="group" aria-label="Фильтры подборки"></div>
+ <div class="cat-status"><div id="topActiveFilters" class="cat-active" aria-label="Выбранные условия"></div><span id="topCount" class="top-count" role="status" aria-live="polite"></span><button type="button" id="topReset" class="cat-reset">Сбросить всё</button></div>
+ <p id="topIntro" class="top-intro"></p>
+ <div id="topGrid" class="catalog-grid top-grid"></div>
+ <div id="topEmpty" class="catalog-empty" hidden><h3>Ничего не нашлось</h3><p>Попробуй другое слово — английские названия тоже ищутся — или убери условие выше.</p></div>
+ <div class="catalog-more-wrap"><button id="topMore" type="button" class="btn ghost">Показать ещё</button></div>
+
+</div></section><div class="local-heading"><h3>Быстрый старт · готовые схемы</h3><p>30 схем Бедрокматики: от маленького лагеря до библиотеки и крепости. Каждую можно открыть в главном проекторе, изменить и скачать.</p></div><div class="catalog-toolbar"><label class="catalog-search"><span aria-hidden="true">⌕</span><input id="catalogSearch" type="search" placeholder="Дом, маяк, Япония…" aria-label="Поиск построек"></label><select id="catalogSource" aria-label="Источник построек" hidden></select><button type="button" id="catalogShuffle" class="catalog-chip">⟳ Перемешать</button><button type="button" id="catalogFavorites" class="catalog-chip" aria-pressed="false">♡ Избранное</button></div>
+ <div class="catalog-filter-row"><div class="catalog-filters" id="catalogFilters" role="group" aria-label="Категории построек"></div><span id="catalogCount" role="status" aria-live="polite"></span></div>
+ <div id="catalogGrid" class="catalog-grid"></div>
+ <div id="catalogEmpty" class="catalog-empty" hidden><h3>Пока ничего не нашлось</h3><p>Попробуй другое название или убери фильтры.</p><button id="catalogReset" type="button" class="btn ghost">Сбросить фильтры</button></div>
+ <div class="catalog-more-wrap"><button id="catalogMore" type="button" class="btn ghost">Показать ещё</button></div>
+ <p class="catalog-how">Нажми на превью — схема сразу откроется в мастерской. Автор и источник появятся под редактором.</p>
+ <details class="catalog-source-details"><summary>Находки на других сайтах · импорт своего файла</summary><p>Для этих работ прямое подключение пока недоступно. Скачай файл на странице проекта и выбери его здесь — подпись автора сохранится вместе с проектом.</p><div id="catalogReferences" class="catalog-references"></div></details>
+ <details class="catalog-source-details"><summary>Больше построек · 8 каталогов ↗</summary><div id="catalogSources" class="catalog-sources"></div><p>Страницы источников проверены 22 октября 2026. Доступность и условия скачивания могут меняться.</p></details>
+ <noscript><p>Для поиска и готовых схем включи JavaScript. Каталоги: <a href="https://mc-schematics.com/">mc-schematics</a>, <a href="https://www.shulkr.com/en">Shulkr</a>, <a href="https://bloxelizer.com/schematics">Bloxelizer</a>.</p></noscript>
+</section>
+
+<footer class="stamp">
+ <div><span>Проект</span><b>Бедрокматика</b></div>
+ <div><span>Формат</span><b>Bedrock 1.21.90+</b></div>
+ <div><span>Следующая стройка</span><b><a href="#catalog">Каталог построек ↑</a></b></div>
+<button type="button" class="link-btn mascot-motion" id="mascotMotion" aria-pressed="false">Анимации персонажа</button></footer>
+</div>
+
+<section id="mapartSection" hidden>
+ <section class="intro"><div class="intro-text"><span class="sheet-no">ЛИСТ 03 · МАПАРТЫ</span><h1>Картинка → карта из блоков</h1></div></section>
+ <div class="mapart-studio">
+  <aside class="panel mapart-tools">
+   <label class="dropzone" id="mapartDrop"><input id="mapStudioInput" type="file" accept="image/*,.nbt,.dat,.schem,.schematic,.litematic,.mcstructure,.zip" multiple><span class="drop-icon" aria-hidden="true">＋</span><strong>Картинка или карта</strong><small>png · jpg · nbt · dat · zip</small></label>
+   <label class="field">Размер<select id="mapSize"><option value="1x1">1 × 1 карта · 128 × 128</option><option value="2x1">2 × 1 · 256 × 128</option><option value="1x2">1 × 2 · 128 × 256</option><option value="2x2">2 × 2 · 256 × 256</option><option value="custom">Свой размер…</option></select></label>
+   <div class="field map-custom" id="mapCustom" hidden>Карт по ширине и высоте<div class="map-custom-row"><input id="mapCustomW" type="number" min="1" max="16" value="3" aria-label="Карт по ширине"><span>×</span><input id="mapCustomH" type="number" min="1" max="16" value="2" aria-label="Карт по высоте"></div><small id="mapCustomNote" class="mono"></small></div>
+   <label class="field">Кадрирование<select id="mapFit"><option value="fill">Заполнить</option><option value="fit">Вместить</option></select></label>
+   <label class="field">Обрезать слева<input id="mapCropLeft" type="range" min="0" max="45" value="0"></label>
+   <label class="field">Обрезать справа<input id="mapCropRight" type="range" min="0" max="45" value="0"></label>
+   <label class="field">Обрезать сверху<input id="mapCropTop" type="range" min="0" max="45" value="0"></label>
+   <label class="field">Обрезать снизу<input id="mapCropBottom" type="range" min="0" max="45" value="0"></label>
+   <div class="field">Режим<div class="seg full" role="group" aria-label="Режим мапарта"><button id="mapFlat" class="selected" type="button">Плоский</button><button id="mapStairs" type="button">Лестница · ×3 оттенка</button></div></div>
+   <label class="field">Блоки<select id="mapPalette"><option value="all">Шерсть, бетон, терракота</option><option value="full">Все цвета карты</option><option value="wool">Только шерсть</option><option value="concrete">Только бетон</option><option value="terracotta">Только терракота</option><option value="custom">Свой набор</option></select></label>
+   <details class="map-colors" id="mapColorsBox"><summary>Блок для каждого цвета <span id="mapColorCount" class="mono"></span></summary><div id="mapColors"></div></details>
+   <label class="field">Дизеринг<select id="mapDither"></select></label>
+   <label class="field">Подбор цвета<select id="mapColorSpace"><option value="lab">Как видит глаз (Lab)</option><option value="rgb">Быстрый (RGB)</option></select></label>
+   <label class="field">Яркость<input id="mapBrightness" type="range" min="-50" max="50" value="0"></label>
+   <label class="field">Контраст<input id="mapContrast" type="range" min="-50" max="100" value="0"></label>
+   <label class="field">Насыщенность<input id="mapSaturation" type="range" min="-100" max="100" value="0"></label>
+   <label class="field">Секции в мастерской<select id="mapTile"><option value="whole">Целиком, если до 100 000 блоков</option><option value="128">128 × 128 — меньше слотов</option><option value="64">64 × 64 — ближе к проектору</option></select></label>
+   <label class="check"><input id="mapGrid" type="checkbox"><span>Сетка карт</span></label>
+  </aside>
+  <div class="mapart-board">
+   <div class="viewer-bar"><strong>Чертёж мапарта</strong><span id="mapartStats" class="mono">128 × 128</span></div>
+   <div id="mapartEmpty" class="mapart-empty"><span aria-hidden="true">▦</span><h2>Добавь картинку</h2><p>Или готовую карту .dat / схему</p></div>
+   <div id="mapartPreview" hidden><div class="mapart-pixels"><canvas id="mapartCanvas" aria-label="Предпросмотр мапарта"></canvas></div></div>
+   <div class="mapart-actions"><button class="btn primary" id="mapToWorkshop" disabled>В мастерскую</button><button class="btn ghost" id="mapNBT" disabled>.nbt</button><button class="btn ghost" id="mapDAT" disabled>.dat</button><button class="btn ghost" id="mapPNG" disabled>PNG</button></div>
+  </div>
+  <aside class="panel mapart-materials"><div class="panel-title">Материалы</div><div id="mapartMaterials"><p class="hint">Появятся после загрузки</p></div></aside>
+ </div>
+</section>
+</main>
+
+<div id="toast" role="status" aria-live="polite" hidden></div>
+
+<dialog id="helpDialog"><button class="icon-btn dialog-close" id="closeHelp" aria-label="Закрыть">×</button>
+ <span class="sheet-no">КАК ПОДКЛЮЧИТЬ</span><h2>Один аддон на сервер.<br>Свои схемы у каждого.</h2>
+ <ol class="help-visual">
+  <li class="help-card"><svg viewBox="0 0 160 96" aria-hidden="true"><rect x="14" y="24" width="50" height="50" rx="4" fill="#163a7a" stroke="#6fe3ff"/><text x="39" y="46" text-anchor="middle" font-size="12" fill="#6fe3ff" font-family="monospace">BP</text><text x="39" y="63" text-anchor="middle" font-size="12" fill="#ffd166" font-family="monospace">RP</text><path d="M72 49h22m-7-7 7 7-7 7" stroke="#eaf1ff" stroke-width="3" fill="none"/><rect x="104" y="30" width="42" height="40" fill="#7a5530"/><rect x="104" y="30" width="42" height="12" fill="#5fae3c"/></svg><strong>Аддон — один раз на мир</strong><span>Владелец мира или администратор подключает BP и RP один раз. Если аддон уже есть, сразу скачивай личный пак схемы.</span></li>
+  <li class="help-card"><svg viewBox="0 0 160 96" aria-hidden="true"><rect x="20" y="14" width="96" height="20" rx="3" fill="#163a7a" stroke="#ffd166"/><path d="M30 29l6-10 6 10z" fill="#6fe3ff"/><rect x="48" y="21" width="58" height="6" rx="2" fill="#ffd166"/><rect x="20" y="40" width="96" height="18" rx="3" fill="#10264f"/><rect x="30" y="46" width="70" height="6" rx="2" fill="#33508f"/><rect x="20" y="64" width="96" height="18" rx="3" fill="#10264f"/><rect x="30" y="70" width="60" height="6" rx="2" fill="#33508f"/><path d="M134 76V22m-8 8 8-8 8 8" stroke="#ffd166" stroke-width="3" fill="none"/></svg><strong>Пак схемы — каждому игроку</strong><span>Скачай ресурс-пак схемы и включи его в глобальных ресурсах выше других паков.</span></li>
+  <li class="help-card"><svg viewBox="0 0 160 96" aria-hidden="true"><rect x="34" y="22" width="14" height="14" rx="1" fill="#eef3ff"/><rect x="18" y="38" width="14" height="14" rx="1" fill="#c9a26b"/><rect x="34" y="38" width="14" height="14" rx="1" fill="#eef3ff"/><rect x="50" y="38" width="14" height="14" rx="1" fill="#c9a26b"/><rect x="18" y="54" width="14" height="14" rx="1" fill="#6f5030"/><rect x="34" y="54" width="14" height="14" rx="1" fill="#6f5030"/><rect x="50" y="54" width="14" height="14" rx="1" fill="#6f5030"/><rect x="18" y="22" width="14" height="14" rx="1" fill="none" stroke="#33508f"/><rect x="34" y="22" width="14" height="14" rx="1" fill="none" stroke="#33508f"/><rect x="50" y="22" width="14" height="14" rx="1" fill="none" stroke="#33508f"/><rect x="18" y="38" width="14" height="14" rx="1" fill="none" stroke="#33508f"/><rect x="34" y="38" width="14" height="14" rx="1" fill="none" stroke="#33508f"/><rect x="50" y="38" width="14" height="14" rx="1" fill="none" stroke="#33508f"/><rect x="18" y="54" width="14" height="14" rx="1" fill="none" stroke="#33508f"/><rect x="34" y="54" width="14" height="14" rx="1" fill="none" stroke="#33508f"/><rect x="50" y="54" width="14" height="14" rx="1" fill="none" stroke="#33508f"/><path d="M74 49h18m-7-7 7 7-7 7" stroke="#eaf1ff" stroke-width="3" fill="none"/><rect x="104" y="34" width="36" height="34" fill="#b28a55"/><rect x="104" y="30" width="36" height="9" fill="#1d4c9b"/><rect x="104" y="34" width="5" height="34" fill="#6f5030"/><rect x="135" y="34" width="5" height="34" fill="#6f5030"/></svg><strong>Скрафти проектор</strong><span>Бумага, доски любого дерева и брёвна — на верстаке.</span></li>
+  <li class="help-card"><svg viewBox="0 0 160 96" aria-hidden="true"><rect x="14" y="18" width="40" height="56" rx="4" fill="#163a7a" stroke="#6fe3ff"/><rect x="26" y="13" width="16" height="9" rx="2" fill="#6fe3ff"/><rect x="21" y="32" width="26" height="4" fill="#6fe3ff"/><rect x="21" y="42" width="22" height="4" fill="#6fe3ff"/><rect x="21" y="52" width="26" height="4" fill="#6fe3ff"/><path d="M62 47h20m-7-7 7 7-7 7" stroke="#eaf1ff" stroke-width="3" fill="none"/><rect x="90" y="18" width="58" height="56" rx="3" fill="#0b1f4d" stroke="#ffd166"/><rect x="97" y="34" width="44" height="12" fill="#5f5f5f"/><rect x="97" y="54" width="44" height="12" rx="2" fill="#c6c6c6"/></svg><strong>Передай коды — один раз</strong><span>Сайт: «Скопировать коды всех схем». Игра: Схемы → Загрузить данные → вставить.</span></li>
+  <li class="help-card"><svg viewBox="0 0 160 96" aria-hidden="true"><g transform="translate(36 48)"><circle r="18" fill="none" stroke="#ffd166" stroke-width="8" stroke-dasharray="7 5"/><circle r="9" fill="#ffd166"/><circle r="4" fill="#0b1f4d"/></g><rect x="76" y="16" width="70" height="18" rx="3" fill="#10264f"/><rect x="76" y="39" width="70" height="18" rx="3" fill="#163a7a" stroke="#6fe3ff"/><rect x="76" y="62" width="70" height="18" rx="3" fill="#10264f"/><text x="84" y="29" font-size="10" fill="#9fb4dd" font-family="monospace">1</text><text x="84" y="52" font-size="10" fill="#6fe3ff" font-family="monospace">2 ✓</text><text x="84" y="75" font-size="10" fill="#9fb4dd" font-family="monospace">3</text></svg><strong>Большая постройка — одна часть за раз</strong><span>Шестерёнка у пака схемы → выбери часть. В проекторе выбери тот же слот.</span></li>
+  <li class="help-card"><svg viewBox="0 0 160 96" aria-hidden="true"><rect x="20" y="20" width="18" height="18" fill="#4fd18b" fill-opacity="0.8" stroke="#6fe3ff" stroke-opacity=".6"/><rect x="40" y="20" width="18" height="18" fill="#4fd18b" fill-opacity="0.8" stroke="#6fe3ff" stroke-opacity=".6"/><rect x="60" y="20" width="18" height="18" fill="#6fe3ff" fill-opacity="0.18" stroke="#6fe3ff" stroke-opacity=".6"/><rect x="80" y="20" width="18" height="18" fill="#6fe3ff" fill-opacity="0.18" stroke="#6fe3ff" stroke-opacity=".6"/><rect x="100" y="20" width="18" height="18" fill="#6fe3ff" fill-opacity="0.18" stroke="#6fe3ff" stroke-opacity=".6"/><rect x="120" y="20" width="18" height="18" fill="#6fe3ff" fill-opacity="0.18" stroke="#6fe3ff" stroke-opacity=".6"/><rect x="20" y="40" width="18" height="18" fill="#4fd18b" fill-opacity="0.8" stroke="#6fe3ff" stroke-opacity=".6"/><rect x="40" y="40" width="18" height="18" fill="#ff5d5d" fill-opacity="0.85" stroke="#6fe3ff" stroke-opacity=".6"/><rect x="60" y="40" width="18" height="18" fill="#6fe3ff" fill-opacity="0.18" stroke="#6fe3ff" stroke-opacity=".6"/><rect x="80" y="40" width="18" height="18" fill="#4fd18b" fill-opacity="0.8" stroke="#6fe3ff" stroke-opacity=".6"/><rect x="100" y="40" width="18" height="18" fill="#6fe3ff" fill-opacity="0.18" stroke="#6fe3ff" stroke-opacity=".6"/><rect x="120" y="40" width="18" height="18" fill="#6fe3ff" fill-opacity="0.18" stroke="#6fe3ff" stroke-opacity=".6"/><rect x="20" y="60" width="18" height="18" fill="#4fd18b" fill-opacity="0.8" stroke="#6fe3ff" stroke-opacity=".6"/><rect x="40" y="60" width="18" height="18" fill="#4fd18b" fill-opacity="0.8" stroke="#6fe3ff" stroke-opacity=".6"/><rect x="60" y="60" width="18" height="18" fill="#4fd18b" fill-opacity="0.8" stroke="#6fe3ff" stroke-opacity=".6"/><rect x="80" y="60" width="18" height="18" fill="#6fe3ff" fill-opacity="0.18" stroke="#6fe3ff" stroke-opacity=".6"/><rect x="100" y="60" width="18" height="18" fill="#6fe3ff" fill-opacity="0.18" stroke="#6fe3ff" stroke-opacity=".6"/><rect x="120" y="60" width="18" height="18" fill="#6fe3ff" fill-opacity="0.18" stroke="#6fe3ff" stroke-opacity=".6"/></svg><strong>Строй по подсветке</strong><span>Зелёный — верно, красный — не тот блок. По всей постройке подсветка видна, когда коды загружены.</span></li>
+ </ol>
+ <details class="help-more"><summary>Подробнее: быстрые предметы и палка отладки</summary>
+ <ol class="help-steps">
+  <li><strong>Проектор.</strong> Найди «Проектор Бедрокматики» в творческом инвентаре, скрафти на верстаке (сверху по центру бумага, в середине бумага между двумя досками любого дерева, внизу три любых бревна) или выполни <code>/give @s bedrockmatika:projector</code>. Поставь и нажми на него.</li>
+  <li><strong>Быстрые предметы.</strong> Нажми на проектор, держа: кирпич — вкл/выкл, палку — сдвиг туда, куда смотришь, медный слиток — поворот, кожу — следующий слой, флинт — режим слоёв, осколок аметиста — видимость, белый краситель — подсветка ошибок, железный слиток — прогресс. С приседанием — в обратную сторону.</li>
+  <li><strong>Палка отладки</strong> (творческий режим, <code>/give @s bedrockmatika:debug_stick</code>). Выглядит как зачарованная палка, как в Java. Нажатие — следующее значение свойства блока, с приседанием — следующее свойство.</li>
+  <li><strong>Табличка материалов.</strong> Показывает общее число блоков, количества материалов и необходимое число двойных сундуков. Прогресс, остаток и ошибки с таблички убраны.</li>
+ </ol></details>
+ <button class="btn primary" id="helpDone">Понятно</button></dialog>
+
+<dialog id="shapeDialog" class="wide-dialog shape-editor"><button class="icon-btn dialog-close" id="closeShape" aria-label="Закрыть">×</button>
+ <span class="sheet-no">РЕДАКТОР ФИГУР</span><h2>Собери постройку из фигур</h2>
+ <p class="hint shape-hint">Ставь фигуры друг на друга, двигай их и вырезай пустоты — окна, двери, проходы. Готовая сцена станет схемой в «Исходниках»: её можно смотреть по слоям, собрать в голограмму и потом снова открыть здесь.</p>
+ <div class="scene-bar">
+  <div class="scene-parts" id="sceneParts" role="listbox" aria-label="Фигуры сцены"></div>
+  <div class="scene-actions"><button type="button" class="btn" id="sceneAdd">+ Фигура сверху</button><button type="button" class="btn" id="sceneDup">Копия</button><button type="button" class="btn" id="sceneDel">Удалить</button></div>
+ </div>
+ <div class="scene-layout">
+  <div class="shape-pick" id="shapeList" role="radiogroup" aria-label="Тип фигуры"></div>
+  <div class="shape-form">
+   <div class="shape-params">
+    <label class="field" id="shapeSizeField">Диаметр<input id="shapeSize" type="number" min="1" max="256" value="15"></label>
+    <label class="field" id="shapeHeightField">Высота<input id="shapeHeight" type="number" min="1" max="256" value="12"></label>
+    <label class="field" id="shapeDepthField">Глубина<input id="shapeDepth" type="number" min="1" max="256" value="3"></label>
+    <label class="field" id="shapeTubeField">Толщина кольца<input id="shapeTube" type="number" min="1" max="256" value="7"></label>
+    <label class="field" id="shapeThicknessField">Толщина стенки<input id="shapeThickness" type="number" min="1" max="64" value="1"></label>
+   </div>
+   <label class="check" id="shapeHollowField"><input id="shapeHollow" type="checkbox" checked><span>Полая внутри</span></label>
+   <label class="check"><input id="shapeCut" type="checkbox"><span>Вырезать: фигура делает пустоту в тех, что выше по списку</span></label>
+   <div class="shape-params scene-pos">
+    <label class="field">X<input id="sceneX" type="number" min="-512" max="512" value="0"></label>
+    <label class="field">Y · высота<input id="sceneY" type="number" min="-512" max="512" value="0"></label>
+    <label class="field">Z<input id="sceneZ" type="number" min="-512" max="512" value="0"></label>
+   </div>
+   <label class="field" id="shapeBlockField">Блок<input id="shapeBlockSearch" class="search" type="search" placeholder="Найти блок…" aria-label="Поиск блока"><select id="shapeBlock" size="6"></select></label>
+  </div>
+  <div class="scene-view">
+   <div class="scene-canvases">
+    <figure><canvas id="sceneTop" width="240" height="240" aria-label="Сцена сверху"></canvas><figcaption>Сверху</figcaption></figure>
+    <figure><canvas id="sceneSide" width="240" height="240" aria-label="Сцена спереди"></canvas><figcaption>Спереди</figcaption></figure>
+   </div>
+   <p id="shapeInfo" class="mono"></p>
+   <div class="scene-submit"><button type="button" class="btn primary" id="shapeCreate">Добавить как схему</button><button type="button" class="btn" id="shapeUpdate" hidden>Сохранить в открытую схему</button></div>
+  </div>
+ </div></dialog>
+
+<dialog id="modelDialog"><button class="icon-btn dialog-close" id="closeModel" aria-label="Закрыть">×</button>
+ <span class="sheet-no">3D-МОДЕЛЬ → БЛОКИ</span><h2 id="modelTitle">Модель</h2>
+ <div class="shape-params">
+  <label class="field">Размер по длинной стороне<input id="modelSize" type="number" min="2" max="256" value="48"></label>
+  <label class="field">Цвета<select id="modelColors"><option value="all">По цвету модели</option><option value="full">По цвету · все блоки карты</option><option value="one">Один блок</option></select></label>
+ </div>
+ <label class="field" id="modelBlockField" hidden>Блок<select id="modelBlock"></select></label>
+ <label class="check"><input id="modelFill" type="checkbox"><span>Заполнить внутри (иначе — только оболочка)</span></label>
+ <p id="modelInfo" class="hint">Модель с осью Y вверх: .glb, .gltf, .obj, .stl.</p>
+ <div class="dialog-actions"><button class="btn primary" id="modelCreate">В мастерскую</button></div></dialog>
+
+<dialog id="worldDialog" class="wide-dialog"><button class="icon-btn dialog-close" id="closeWorld" aria-label="Закрыть">×</button>
+ <span class="sheet-no">СХЕМА ИЗ МИРА · <span id="worldChunks"></span></span><h2 id="worldTitle">Мир</h2>
+ <div class="world-layout">
+  <div class="world-map"><div class="seg world-modes" role="group" aria-label="Вид мира"><button type="button" id="worldModeMap" class="selected" aria-pressed="true">Карта сверху</button><button type="button" id="worldMode3d" aria-pressed="false">3D-просмотр</button></div><canvas id="worldMap" width="512" height="512" aria-label="Карта мира сверху: потяни, чтобы выделить область"></canvas>
+   <div id="world3dWrap" class="world-3d" hidden><div id="world3d"></div><p id="world3dNote" class="hint"></p><div id="worldFrame" class="world-frame" hidden><span class="world-frame-title">Рамка в 3D — тяни ползунки «от» и «до»</span><div class="frame-row"><b>X</b><input type="range" id="worldFrameX1" aria-label="X: от"><input type="range" id="worldFrameX2" aria-label="X: до"><span id="worldFrameLabelX" class="mono"></span></div><div class="frame-row"><b>Y</b><input type="range" id="worldFrameY1" aria-label="Y: от"><input type="range" id="worldFrameY2" aria-label="Y: до"><span id="worldFrameLabelY" class="mono"></span></div><div class="frame-row"><b>Z</b><input type="range" id="worldFrameZ1" aria-label="Z: от"><input type="range" id="worldFrameZ2" aria-label="Z: до"><span id="worldFrameLabelZ" class="mono"></span></div></div></div><div class="world-nav" id="worldNav"><button class="icon-btn" id="worldUp" aria-label="Север">↑</button><button class="icon-btn" id="worldLeft" aria-label="Запад">←</button><button class="icon-btn" id="worldRight" aria-label="Восток">→</button><button class="icon-btn" id="worldDown" aria-label="Юг">↓</button><button class="icon-btn" id="worldZoomIn" aria-label="Приблизить">＋</button><button class="icon-btn" id="worldZoomOut" aria-label="Отдалить">－</button></div></div>
+  <div class="world-form"><p class="hint">Потяни по карте, чтобы выделить постройку. Высоту выбери на виде сбоку: тяни жёлтые линии. Координаты — как в игре.</p><div class="world-side"><div class="world-side-head"><b>Вид сбоку</b><select id="worldSideAxis" aria-label="Сторона вида сбоку"><option value="z">с юга</option><option value="x">с востока</option></select><span id="worldSideRange" class="mono"></span></div><canvas id="worldSide" width="0" height="0" aria-label="Вид сбоку: потяни жёлтые линии, чтобы выбрать нижнюю и верхнюю границу"></canvas><p id="worldSideNote" class="hint"></p></div>
+   <div class="coords"><span></span><b>X</b><b>Y</b><b>Z</b><span>Угол 1</span><input id="worldX1" inputmode="numeric" aria-label="X первого угла"><input id="worldY1" inputmode="numeric" aria-label="Y первого угла"><input id="worldZ1" inputmode="numeric" aria-label="Z первого угла"><span>Угол 2</span><input id="worldX2" inputmode="numeric" aria-label="X второго угла"><input id="worldY2" inputmode="numeric" aria-label="Y второго угла"><input id="worldZ2" inputmode="numeric" aria-label="Z второго угла"></div>
+   <div class="world-clean"><label class="check"><input type="checkbox" id="worldNoTerrain"><span>Без природного ландшафта — земля, камень, вода, трава, руды</span></label><label class="check"><input type="checkbox" id="worldNoTrees"><span>И без деревьев</span></label><button type="button" class="btn ghost" id="worldFit" disabled>Подогнать рамку под постройку</button></div><p id="worldInfo" class="mono"></p>
+   <label class="field">Название<input id="worldName" class="search" maxlength="80"></label>
+   <button class="btn primary" id="worldTake" disabled>В мастерскую</button></div>
+ </div></dialog>
+
+<dialog id="variantDialog"><button class="icon-btn dialog-close" id="closeVariant" aria-label="Закрыть">×</button>
+ <span class="sheet-no">ЗАМЕНА МАТЕРИАЛА</span><h2>Та же форма, другой блок</h2>
+ <div class="replacement-layout">
+  <section><h3>Что заменить</h3><div id="replaceFromList" class="block-grid source-grid"></div></section>
+  <section><h3>На что</h3>
+   <div class="replacement-tools"><div class="seg" role="group"><button id="replaceSimilar" aria-pressed="true">Похожие</button><button id="replaceAll" aria-pressed="false">Все</button></div><select id="replaceScope" aria-label="Источник блоков"><option value="all">Minecraft и аддоны</option><option value="custom">Только аддоны</option></select></div>
+   <input id="replaceSearch" class="search" type="search" placeholder="Найти блок…" aria-label="Поиск блока для замены">
+   <p id="paletteStatus" class="hint" role="status"></p><div id="replaceToList" class="block-grid target-grid"></div>
+   <p id="replacementSelection" class="hint">Выбери блок</p><input id="replaceCustomName" class="search" hidden placeholder="Русское название блока" aria-label="Русское название своего блока">
+  </section></div>
+ <div class="replacement-plan"><h3>Замены <span id="replacementCount" class="mono">0</span></h3><div id="replacementList"><p class="hint">Выбери блок слева и новый блок справа. Можно несколько замен сразу.</p></div></div>
+ <div class="dialog-actions"><button class="btn primary" id="applyReplacement" disabled>Заменить в этой схеме</button><button class="btn ghost" id="createVariant" disabled>Создать копию</button></div></dialog>
+
+<script type="module" src="app.js?v=20261024a"></script></body></html>

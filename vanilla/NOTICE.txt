@@ -1,0 +1,4 @@
+Minecraft textures, block texture mappings and Russian names from Mojang/bedrock-samples. (c) Mojang/Microsoft. Subject to the Minecraft EULA: https://www.minecraft.net/en-us/eula . These resources are not covered by the converter MIT license.
+Source: https://raw.githubusercontent.com/Mojang/bedrock-samples/main/resource_pack/
+
+Copper golem statue geometry (standing, sitting, running, star) and four oxidation textures, plus banner pattern masks: Mojang/bedrock-samples main, retrieved 25 October 2026. Banner TGA files losslessly converted to PNG; cube and bone transforms flattened into src/golem-models.json. Sources: resource_pack/models/entity/copper_golem*.geo.json and resource_pack/textures/entity/{copper_golem,banner}/.

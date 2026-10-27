@@ -1,0 +1,16 @@
+{
+  "name": "Бедрокматика — чертежи для Minecraft Bedrock",
+  "short_name": "Бедрокматика",
+  "description": "Схемы, голограммы, мапарты и фигуры для Minecraft Bedrock. Работает без интернета.",
+  "lang": "ru",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b1f4d",
+  "theme_color": "#0b1f4d",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png"},
+    {"src": "favicon.svg", "sizes": "any", "type": "image/svg+xml"}
+  ]
+}
